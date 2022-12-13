@@ -1,0 +1,21 @@
+.text_section{
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .text_section h2{
+    align-self: center;
+  }
+  .filter_line{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  }
+  .filter_btn{
+    background-color: white;
+    border: none;
+    font-weight: 600;
+    transition: all 500ms ease;
+  }
+  .filter_btn:hover{   
+    transform: scale(1.05);
+  }

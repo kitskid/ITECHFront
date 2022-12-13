@@ -1,0 +1,12 @@
+.provider{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);     
+}
+.search_name_product{
+    margin: 30px;
+}

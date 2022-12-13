@@ -1,0 +1,99 @@
+.cart_item{
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    border: 1px solid #9d9d9d;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px;
+    min-width: 300px;
+    min-height: 450px;
+    transition: box-shadow 0.4s ease-out;
+  }
+  .cart_item:hover{
+    box-shadow: 0px 0px 10px 0px #616161;
+  }
+  .cart_img{
+    width: 80px;
+    align-self: center;
+    justify-self: center;
+  }
+
+  .close_btn{
+    width: fit-content;
+    justify-self: end;
+    align-self: center;
+    padding: 10px 12px 10px 12px;
+    color: #9d9d9d;
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .function_btn:hover{
+    background-color: rgb(190, 190, 190);
+  }
+  .function_btn{
+    display: grid;
+    background-color: rgb(218, 218, 218);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 10px;  
+    margin-top: 30px;
+    min-width: 80px;
+    max-height: 40px;
+    cursor: pointer;
+  }
+
+  .cart_price{
+    font-weight: bold;
+    margin-top: 5px;
+    justify-self: center;
+  }
+  .text{
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+  }
+  .description{
+    margin: 0 ;
+    justify-self: center;
+  }
+  .cart_title{
+    margin: 0;
+    justify-self: center;
+    font-size: 14px;
+  }
+  .end_line{
+    display: grid;
+    grid-template-columns: 1fr 2fr;    
+  }
+  .status{
+    margin-top: 5px;
+    justify-self: center;
+  }
+  .thenks{
+    margin: 20px;
+  }
+  .container_form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  select[type="changestatus"]{
+    max-width: 250px;
+    max-height: 35px;
+    display: grid;
+    background-color: rgb(218, 218, 218);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: end;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 10px;  
+    margin-top: 30px;
+  }

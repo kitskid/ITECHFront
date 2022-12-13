@@ -1,0 +1,198 @@
+.conteiner_row_one{
+  display: grid;
+  grid-template-columns: 4fr 0.4fr 0.4fr 0.4fr 0.4fr;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(226, 226, 226);
+  
+}
+.singin_btn{
+  background-color: rgb(218, 218, 218);
+  color: rgb(68, 68, 68);
+  border: 1px solid rgb(184, 184, 184);
+  justify-self: start;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px;  
+  margin: 1px;
+}
+.singup_btn{
+  background-color: #001AFF;
+  color: white;
+  border: 1px solid #001AFF;
+  justify-self: end;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 10px;  
+  margin: 1px;
+}
+.singin_btn:hover{
+  background-color: rgb(190, 190, 190);
+  
+}
+.singup_btn:hover{
+  background-color: #0015d1;
+  
+}
+
+header{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: black;
+    padding: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .logo{
+    color: white;
+  }
+  
+  nav{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  
+  .nav_item{
+    background-color: black;
+    color: #001AFF;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .nav_item:hover{
+    color: white;
+  }
+  .cart_link{
+    display: grid;
+    grid-template-columns: 2fr 0.5fr;
+  }
+  .cartItems_count{
+    font-size: 14px;
+    font-weight: bold;
+    background-color: white;
+    color: #001AFF;
+    border-radius: 20px;
+    padding: 5px;
+    margin: auto;
+  }
+  .singout_btn{
+    background-color: #001AFF;
+    color: white;
+    border: 1px solid #001AFF;
+    justify-self: end;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 1px;
+    min-width: 80px;
+  }
+  .singout_btn:hover{
+    background-color: #0015d1;    
+  }
+
+  .function_btn:hover{
+    background-color: rgb(190, 190, 190);
+  }
+  .function_btn{
+    background-color: rgb(218, 218, 218);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 1px;
+    min-width: 80px;
+  }
+  .function_btn_on{
+    background-color: rgb(190, 190, 190);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 1px;
+    min-width: 80px;
+  }
+
+  .text{
+    color: #0015d1;
+  }
+
+  .provider_btn:hover{
+    background-color: rgb(190, 190, 190);
+  }
+  .provider_btn{
+    background-color: rgb(218, 218, 218);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 4px;
+    min-width: 130px;
+  }
+  .provider_btn_on{
+    background-color: rgb(190, 190, 190);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 4px;
+    min-width: 130px;    
+  }
+
+  .singout_provider_btn{
+    background-color: #001AFF;
+    color: white;
+    border: 1px solid #001AFF;
+    justify-self: end;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 1px;
+    min-width: 130px;
+  }
+  .singout_provider_btn:hover{
+    background-color: #0015d1;    
+  }
+
+  .user_btn:hover{
+    background-color: rgb(190, 190, 190);
+  }
+  .user_btn{
+    background-color: rgb(218, 218, 218);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 1px;
+    min-width: 80px;
+  }
+  .user_btn_on{
+    background-color: rgb(190, 190, 190);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin: 1px;
+    min-width: 80px;
+  }
+  .conteiner_row_one_admin{
+    display: grid;
+    grid-template-columns: 3fr 0.4fr 0.4fr 0.4fr 0.4fr 0.4fr;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(226, 226, 226);
+  }

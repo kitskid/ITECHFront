@@ -1,0 +1,41 @@
+.button_product_row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.button_user_row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.first_btn{
+    justify-self: end;
+}
+
+.function_btn:hover{
+    background-color: rgb(190, 190, 190);
+  }
+  .function_btn{
+    background-color: rgb(218, 218, 218);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;    
+    min-width: 120px;
+  }
+  .function_btn_on{
+    background-color: rgb(190, 190, 190);
+    color: rgb(68, 68, 68);
+    border: 1px solid rgb(184, 184, 184);
+    justify-self: start;
+    border-radius: 4px;
+    font-size: 15px;
+    padding: 10px;  
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    min-width: 120px;
+  }

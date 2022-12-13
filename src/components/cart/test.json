@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "title": "iPhoneXR_1",
+        "price": "49 999 руб.",
+        "img": "/img/iphone-1.png"
+      },
+      {
+        "id": 2,
+        "title": "iPhoneXR_2",
+        "price": "49 999 руб.",
+        "img": "/img/iphone-1.png"
+      },
+      {
+        "id": 3,
+        "title": "iPhoneXR_3",
+        "price": "49 999 руб.",
+        "img": "/img/iphone-1.png"
+      }
+
+]

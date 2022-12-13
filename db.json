@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "myId": 1,
+      "title": "iPhoneXR_1",
+      "price": 49990,
+      "img": "/img/iphone-1.png",
+      "description": "Короткое описание продукта",
+      "key": "0"
+    },
+    {
+      "id": 2,
+      "myId": 2,
+      "title": "iPhoneXR_2",
+      "price": 49990,
+      "img": "/img/iphone-1.png",
+      "description": "Короткое описание продукта",
+      "key": "0"
+    },
+    {
+      "id": 3,
+      "myId": 3,
+      "title": "iPhoneXR_3",
+      "price": 49990,
+      "img": "/img/iphone-1.png",
+      "description": "Короткое описание продукта",
+      "key": "0"
+    },
+    {
+      "id": 4,
+      "myId": 4,
+      "title": "iPhoneXR_4",
+      "price": 49990,
+      "img": "/img/iphone-1.png",
+      "description": "Короткое описание продукта",
+      "key": "0"
+    },
+    {
+      "id": 5,
+      "myId": 5,
+      "title": "iPhoneXR_5",
+      "price": 49990,
+      "img": "/img/iphone-1.png",
+      "description": "Короткое описание продукта",
+      "key": "0"
+    },
+    {
+      "id": 6,
+      "myId": 6,
+      "title": "iPhoneXR_6",
+      "price": 49990,
+      "img": "/img/iphone-1.png",
+      "description": "Короткое описание продукта",
+      "key": "0"
+    }
+  ],
+  "cart": [],
+  "favorites": []
+}

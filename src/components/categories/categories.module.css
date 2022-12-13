@@ -1,0 +1,26 @@
+.conteiner{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.category{
+    display: grid;
+    min-width: 150px;
+    margin: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    color: rgb(105, 105, 105);
+    background-color:#f1eeee;
+    padding: 10px;
+
+    border-radius: 10px;
+    border: 1px solid #f1eeee;
+    justify-self: center;
+    transition: all 500ms ease;
+}
+.category:hover{
+    
+    border-color: silver;
+    transform: scale(1.05);
+}

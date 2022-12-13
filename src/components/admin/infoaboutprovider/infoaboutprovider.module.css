@@ -1,0 +1,9 @@
+.container_info{
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.search_name_product{
+    margin: 20px;
+    padding-top: 10px;
+
+}

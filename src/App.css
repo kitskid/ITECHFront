@@ -1,0 +1,23 @@
+.app {
+  margin: 0;
+}
+
+
+
+.h3_slider{
+  background: #5f9ea0;
+  color: #fff;
+  font-size: 0px;
+  line-height: 0px;
+  margin: 10px;
+  padding: 2%;
+  position: relative;
+  text-align: center;    
+}
+.img_slider{
+  width: 200px;
+  margin: auto;
+}
+.div_slider{
+  max-width: 200px;
+}

@@ -1,0 +1,19 @@
+footer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: black;
+    padding: 30px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+  footer p{
+    color: white;
+  }
+  footer .logo{
+    font-size: 45px;
+    font-weight: bold;
+  }
+  .logo{
+    color: white;
+  }  
