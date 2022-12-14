@@ -111,6 +111,17 @@ export const addProvider=(authRequest)=>{
         data: authRequest     
     })
 }
+export const updateProvider=(data)=>{
+    return axios({
+        method: 'POST',
+        headers: { 
+            'Authorization':'Bearer '+getToken(),
+            'Content-Type': 'application/json' 
+        },
+        url: 'http://localhost:8080/main/api/provider/update',
+        data: data     
+    })
+}
 
 export const updateProduct=(data)=>{
     return axios({

@@ -24,6 +24,9 @@ import PanelProvider from './components/provider/panelprovider/PanelProvider';
 import UpdateProduct from './components/provider/editproduct/UpdateProduct';
 import EditProduct from './components/provider/editproduct/EditProduct';
 import EditProvider from './components/admin/providercard/editProviders/EditProvider';
+import UpdateProvider from './components/admin/providercard/editProviders/UpdateProvider';
+import EditProductAdmin from './components/admin/editproductadmin/EditProductAdmin';
+import UpdateProductAdmin from './components/admin/editproductadmin/UpdateProductAdmin';
 
 
 
@@ -270,7 +273,19 @@ function App() {
           <Route path='/editprovider' element={
             <EditProvider/>
             }
-            />               
+            /> 
+          <Route path='/providerupdatecard' element={
+            <UpdateProvider/>
+            }
+            /> 
+          <Route path='/editproductadmin' element={
+            <EditProductAdmin/>
+            }
+            /> 
+          <Route path='/productupdatecardadmin' element={
+            <UpdateProductAdmin/>
+            }
+            />                  
           <Route path="/" element={
             <Home 
               items={products}

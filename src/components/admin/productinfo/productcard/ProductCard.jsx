@@ -7,6 +7,7 @@ const ProductCard = (props) =>{
 
     const context = React.useContext(AppContext);
     const [avatar, setAvatar] = React.useState();
+    const [currentCard, setCurrentCard] = React.useState();
 
     const getToken=()=>{
       return localStorage.getItem('USER_KEY');
@@ -55,9 +56,42 @@ const ProductCard = (props) =>{
 
         context.setEditProduct({id, name, description, price, providerName, fileName, url, categoryName});
         console.log('отработало');
-                
-        
     }
+    const Info = () => {
+
+        context.setInfoCard([]);
+        context.setIsInfo(false);
+        if(props.change){
+          props.setChange(false);
+        } else {
+          props.setChange(true);
+        }
+     
+        
+        let key = props.key;    
+        let id = props.id;      
+        let name = props.name;
+        let description = props.description;    
+        let price = props.price;
+        let providerName = props.providerName;
+        let fileName = props.fileName;        
+        let nameCategory = props.nameCategory;
+        let avatarCard = avatar;
+  
+        const obj = {id, key, name, price, fileName, description, providerName, nameCategory, avatarCard}
+        let findObj = false;
+        if (context.productsAll !== []) {
+          findObj = props.productsAll.find(objFind => objFind.id === id);
+        }
+        console.log("obj " + findObj.id);
+        context.setInfoCard(obj);
+        setCurrentCard(obj);
+  
+        context.setIsInfo(!context.isIfo);
+        console.log("содержимое карточки " + currentCard);
+        
+      } 
+  
 
     return(
         <div className={style.product_item}> 
@@ -75,7 +109,7 @@ const ProductCard = (props) =>{
             <div className={style.button_all}>
                <button className={style.all_btn} onClick={EditProduct}>Edit</button>
                <button className={style.all_btn} onClick={DeleteProduct}>Delete</button>
-               <button className={style.all_btn}>Info</button>                
+               <button className={style.all_btn} onClick={Info}>Info</button>                
             </div>
             
         </div>

@@ -1,21 +1,27 @@
 import style from './updateprovider.module.css';
 import React from 'react';
 import { AppContext } from '../../../../App';
-import { addAvatarProvider, addProvider} from '../../../../api/requests';
+import { addAvatarProvider, updateProvider} from '../../../../api/requests';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const UpdateProvider = () => { 
 
     const context = React.useContext(AppContext);        
-    
+    const navigate = useNavigate();
 
     const onClickBtn = (data) => {          
-        onAddToServer({...context.dataForm});
+        onAddToServer();
         context.setErrorServer([]);             
         context.setDataFormProvider([]); 
         context.setImageProvider([]);
         context.setImageProviderUrl([]); 
-        context.setIsImageProviderUrl(false);             
+        context.setIsImageProviderUrl(false); 
+        context.setEditProvider([]);
+        if(!context.errorServer){
+          context.setIsEditProvider(false);   
+        }
+                
     }
     const CloseBtn=()=>{
 
@@ -28,7 +34,7 @@ const UpdateProvider = () => {
         formData.append('file', context.imageProvider);
         formData.append('login', context.dataFormProvider.login);
 
-        await addProvider({...context.dataFormProvider}).then((response)=>{
+        await updateProvider({...context.dataFormProvider}).then((response)=>{
             if(response.status === 200){                
                 console.log("Наконецто добавились");
                 context.setDataFormProvider([]);                                  

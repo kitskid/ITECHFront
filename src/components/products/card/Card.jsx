@@ -87,8 +87,6 @@ const Card = (props) =>{
       let avatarCard = avatar;
 
       const obj = {id, key, name, price, fileName, description, providerName, nameCategory, avatarCard}
-      // const formData = new FormData();
-      // formData.append('id', id);
       let findObj = false;
       if (context.productsAll !== []) {
         findObj = props.productsAll.find(objFind => objFind.id === id);

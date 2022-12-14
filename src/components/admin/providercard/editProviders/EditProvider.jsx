@@ -28,9 +28,13 @@ const EditProvider = () => {
 
     const hasPhone = watch('hasPhone');
 
-    const onClickBtn = (data) => {  
+    const onClickBtn = (data) => { 
+        if(!context.isImageProviderUrl){
+            context.setImageProviderUrl(context.editProvider.url);
+            context.setIsImageProviderUrl(true);
+        } 
         context.setValuesProvider(data);        
-        navigate('/provideraddcard');
+        navigate('/providerupdatecard');
                        
     }  
 
@@ -45,9 +49,11 @@ const EditProvider = () => {
 
     const closeAddUser =()=>{
         context.setIsEditProvider(false);
+        context.setEditProvider([]); 
         context.setImageProvider([]);
         context.setImageProviderUrl([]); 
         context.setIsImageProviderUrl(false);
+        context.setDataFormProvider([]);
         navigate('/paneladmin');
     }
 

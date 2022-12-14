@@ -3,10 +3,13 @@ import ProductsService from "../../../services/ProductsService";
 import ProductCard from "./productcard/ProductCard";
 import style from "./productsinfo.module.css";
 import axios from "axios";
+import Info from "../../info/Info";
+import { AppContext } from "../../../App";
 
-const ProductInfo = () =>{
+const ProductInfo = (props) =>{
 
     const [productsAll, setProductsAll] = React.useState([]);
+    const context = React.useContext(AppContext);
 
     React.useEffect(()=>{ 
         async function axiosProductsAll () {
@@ -37,21 +40,34 @@ const ProductInfo = () =>{
 
 
     return(
-        <div className={style.products}>                                                    
-                {
-                    productsAll.map(product =>{
-                    return(    
-                       <ProductCard
-                            key={product.id}                            
-                            DeleteProduct={(obj) =>{
-                                DeleteProduct(obj);
-                            }}
-                        {...product}
-                       />
-                    )                           
-                    })
-                }                    
+        <div>
+            <div>
+                {context.isInfo ? 
+                    <Info/>
+                    :
+                    null    
+                }                
+            </div>
+            <div className={style.products}>                                                    
+                    {
+                        productsAll.map(product =>{
+                        return(    
+                        <ProductCard
+                                key={product.id}                            
+                                DeleteProduct={(obj) =>{
+                                    DeleteProduct(obj);
+                                }}
+                            {...product}
+                            productsAll={productsAll} 
+                            setChange={props.setChange}
+                            change={props.change}
+                        />
+                        )                           
+                        })
+                    }                    
+            </div>            
         </div>
+
     );
 }
 export default ProductInfo;

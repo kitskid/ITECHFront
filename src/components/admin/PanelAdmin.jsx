@@ -11,13 +11,15 @@ import ProviderAdd from './providercard/provideradd/ProviderAdd';
 import InfoAboutProvider from './infoaboutprovider/InfoAboutProvider';
 import AllOrders from './orders/AllOrders';
 import EditProvider from './providercard/editProviders/EditProvider';
+import EditProductAdmin from './editproductadmin/EditProductAdmin';
 
 
 
 
-const PanelAdmin = () => {
+const PanelAdmin = (props) => {
 
   const context = React.useContext(AppContext);
+  const [change, setChange] = React.useState(false);
 
   const setButtonAllProviders=()=>{
     if(context.isAllProviders) {
@@ -83,10 +85,11 @@ const PanelAdmin = () => {
           <div className={style.button_user_row}>
             <span></span>  
             <span className={style.first_btn}>
-                <button className={context.isAddUser ? style.function_btn_on : style.function_btn} onClick={() =>setButtonAddUser()}>Add User</button> 
+                 
+                <button className={context.isAllUsers ? style.function_btn_on : style.function_btn} onClick={() =>setButtonAllUsers()}>All Users</button> 
             </span>
             <span className={style.second_btn}>
-              <button className={context.isAllUsers ? style.function_btn_on : style.function_btn} onClick={() =>setButtonAllUsers()}>All Users</button> 
+                <button className={context.isAddUser ? style.function_btn_on : style.function_btn} onClick={() =>setButtonAddUser()}>Add User</button>
             </span>
             <span></span>
           </div>
@@ -152,7 +155,11 @@ const PanelAdmin = () => {
             <></>
           }
           {context.isAddProvider? <ProviderAdd /> : <></>}
-          {context.isAllProducts ? <ProductInfo /> : <></>}
+          {context.isAllProducts ?
+            context.isEditProduct ? <EditProductAdmin/>: <ProductInfo setChange={setChange} change={change}/>
+            :
+            <></>
+            }
           {context.isAddProduct ? <ProductAdd /> : <></>}
         
       </div>  

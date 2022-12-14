@@ -48,7 +48,7 @@ const Home = (props) => {
         <> 
         {localStorage.getItem('USER_ROLE') === 'ADMIN' 
         ? 
-            <PanelAdmin /> 
+            <PanelAdmin/> 
         : 
         <>
         {localStorage.getItem('USER_ROLE') === 'PROVIDER' 
