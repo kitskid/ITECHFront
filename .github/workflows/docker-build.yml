@@ -32,8 +32,8 @@ jobs:
       # Шаг 4: Сборка и пуш Docker образа
       - name: Build and push Docker image
         run: |
-          docker build -t https://apiuavprof.dieztech.ru/my-image:${{ github.sha }} .          
-          docker push https://apiuavprof.dieztech.ru/my-image:${{ github.sha }}  # Используем HTTP URL
+          docker build -t apiuavprof.dieztech.ru/my-image:${{ github.sha }} .          
+          docker push apiuavprof.dieztech.ru/my-image:${{ github.sha }}  # Используем HTTP URL
 
       # Шаг 5: Развертывание на удаленном сервере (через SSH)
       - name: SSH into remote server and deploy the container
