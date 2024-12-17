@@ -29,13 +29,17 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: https://apiuavprof.dieztech.ru
 
-      # Шаг 4: Сборка и пуш Docker образа
-      - name: Build and push Docker image
+      # Шаг 4: Сборка Docker образа
+      - name: Build Docker image
         run: |
-          docker build -t apiuavprof.dieztech.ru/my-image:${{ github.sha }} .          
+          docker build -t apiuavprof.dieztech.ru/my-image:${{ github.sha }} .
+          
+      # Шаг 5: Загрузка Docker образа в Registry
+      - name: Push Docker image
+        run: |
           docker push apiuavprof.dieztech.ru/my-image:${{ github.sha }}  # Используем HTTP URL
 
-      # Шаг 5: Развертывание на удаленном сервере (через SSH)
+      # Шаг 6: Развертывание на удаленном сервере (через SSH)
       - name: SSH into remote server and deploy the container
         uses: appleboy/ssh-action@v0.1.5
         with:
@@ -48,7 +52,7 @@ jobs:
             docker rm my-image || true
             
             # Загрузка нового образа из Docker registry
-            docker pull apiuavprof.dieztech.ru/my-image:latest
+            docker pull apiuavprof.dieztech.ru/my-image:${{ github.sha }}
             
             # Запуск нового контейнера
-            docker run -d -p 3000:3000 --name my-image apiuavprof.dieztech.ru/my-image:latest
+            docker run -d -p 3000:3000 --name my-image apiuavprof.dieztech.ru/my-image:${{ github.sha }}
