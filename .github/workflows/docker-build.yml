@@ -1,0 +1,52 @@
+name: Build and Deploy React App in Docker
+
+on:
+  push:
+    branches:
+      - main  # Запускать workflow при пуше в ветку main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Шаг 1: Checkout кода
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Шаг 2: Настроить Docker Buildx (для многоплатформенной сборки)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Шаг 3: Логин в Docker registry (если используется внешний registry, иначе можно пропустить)
+      - name: Log in to Docker registry
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: ${{ secrets.DOCKER_REGISTRY_URL }}
+
+      # Шаг 4: Сборка и пуш Docker образа
+      - name: Build and push Docker image
+        run: |
+          docker build -t my-react-app:latest .
+          docker tag my-react-app:latest ${{ secrets.DOCKER_REGISTRY_URL }}/my-react-app:latest
+          docker push ${{ secrets.DOCKER_REGISTRY_URL }}/my-react-app:latest
+
+      # Шаг 5: Развертывание на удаленном сервере (через SSH)
+      - name: SSH into remote server and deploy the container
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.REMOTE_SERVER_IP }}
+          username: ${{ secrets.REMOTE_SERVER_USERNAME }}
+          password: ${{ secrets.REMOTE_SERVER_PASSWORD }} # Используется для пароля
+          script: |
+            # Остановка старого контейнера (если существует)
+            docker stop my-react-app || true
+            docker rm my-react-app || true
+            
+            # Загрузка нового образа из Docker registry
+            docker pull ${{ secrets.DOCKER_REGISTRY_URL }}/my-react-app:latest
+            
+            # Запуск нового контейнера
+            docker run -d -p 3000:3000 --name my-react-app ${{ secrets.DOCKER_REGISTRY_URL }}/my-react-app:latest
