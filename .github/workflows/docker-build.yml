@@ -48,7 +48,7 @@ jobs:
             docker rm my-react-app || true
             
             # Загрузка нового образа из Docker registry
-            docker pull https://apiuavprof.dieztech.ru/my-react-app:latest
+            docker pull apiuavprof.dieztech.ru/my-react-app:latest
             
             # Запуск нового контейнера
-            docker run -d -p 3000:3000 --name my-react-app https://apiuavprof.dieztech.ru/my-react-app:latest
+            docker run -d -p 3000:3000 --name my-react-app apiuavprof.dieztech.ru/my-react-app:latest
