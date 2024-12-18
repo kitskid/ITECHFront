@@ -47,6 +47,9 @@ jobs:
           username: ${{ secrets.REMOTE_SERVER_USERNAME }}
           password: ${{ secrets.REMOTE_SERVER_PASSWORD }} # Используется для пароля
           script: |
+            # Вход в Docker registry
+            echo ${{ secrets.DOCKER_PASSWORD }} | docker login apiuavprof.dieztech.ru -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+            
             # Остановка старого контейнера (если существует)
             docker stop my-image || true
             docker rm my-image || true
